@@ -1,0 +1,28 @@
+
+
+body {
+  background: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 100px;
+  color: rgb(39, 255, 1);
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+p {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+a { color:cyan; 
+  text-decoration: none;
+
+  border: 2px solid cyan;
+  margin: 30px;
+  padding: 12px 20px;
+}
