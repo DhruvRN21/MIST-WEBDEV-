@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lost Forever</title>
-    <link rel="stylesheet" href="Web1.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost Forever</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-black via-green-900 to-black min-h-screen  flex-col ">
-    <h1 class="font-mono font-extrabold text-7xl text-center text-red-900 animate-ping "><strong>ERROR 404</strong></h1>
-   
-    <p class="font-mono text-white text-center p-5 text-lg">Looks like you took the wrong path </p>
-    <p class="font-mono text-white text-center p-5 text-lg">📍 LOCATION : THE VOID</p>
-    <p class="font-mono text-white text-center p-5 text-lg">Downloading RAM...To survive</p>
-    <p class="border-2 border-green-600 rounded-md m-40 mx-60 p-1 text-center hover:bg-green-600 hover:scale-110 hover:text-white transition"><a  class="font-mono" href="Web2.html">Press to Return back to your life</a></p>
+<body class="bg-gradient-to-r from-black via-green-900 to-black min-h-screen flex flex-col justify-center items-center text-center">
+
+  <h1 class="font-mono font-extrabold text-7xl text-red-700 animate-pulse mb-6">ERROR 404</h1>
+
+  <p class="font-mono text-white text-lg mb-2">Looks like you took the wrong path...</p>
+  <p class="font-mono text-white text-lg mb-2">📍 LOCATION: THE VOID</p>
+  <p class="font-mono text-white text-lg mb-8">Downloading RAM... please wait</p>
+
+  <div class="w-2/3 bg-gray-800 rounded-md h-3 overflow-hidden mb-10">
+    <div id="progressBar" class="bg-green-600 h-3 w-0 transition-all duration-300"></div>
+  </div>
+
+  <button id="returnBtn" class="border-2 border-green-600 text-green-400 px-6 py-2 rounded-md hover:bg-green-600 hover:text-white transition">
+    Press to Return Back to Your Life
+  </button>
+
+  <script>
+    const bar = document.getElementById('progressBar');
+    const btn = document.getElementById('returnBtn');
+    let progress = 0;
+    let downloading = true;
+
+    // Simple progress bar fill-up
+    const timer = setInterval(() => {
+      progress += 10;
+      bar.style.width = progress + "%";
+      if (progress >= 100) {
+        clearInterval(timer);
+        downloading = false;
+      }
+    }, 500);
+
+    btn.addEventListener('click', () => {
+      if (downloading) {
+        alert("Hold on... system not ready yet!");
+      } else {
+        alert("System rebooting...");
+        setTimeout(() => {
+          window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+        }, 1200);
+      }
+    });
+  </script>
 
 </body>
 </html>
+
 
 
 
