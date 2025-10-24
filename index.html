@@ -28,7 +28,7 @@
     let progress = 0;
     let downloading = true;
 
-    // Simple progress bar fill-up
+
     const timer = setInterval(() => {
       progress += 10;
       bar.style.width = progress + "%";
@@ -38,13 +38,14 @@
       }
     }, 500);
 
+
     btn.addEventListener('click', () => {
       if (downloading) {
         alert("Hold on... system not ready yet!");
       } else {
         alert("System rebooting...");
         setTimeout(() => {
-          window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+          window.location.href = "Web2.html";
         }, 1200);
       }
     });
@@ -52,6 +53,7 @@
 
 </body>
 </html>
+
 
 
 
