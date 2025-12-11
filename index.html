@@ -1,62 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lost Forever</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <title>MovieWorld - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-black via-green-900 to-black min-h-screen flex flex-col justify-center items-center text-center">
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <header class="border-b border-slate-800 bg-slate-900/80">
+        <div class="max-w-3xl mx-auto flex items-center justify-between px-4 py-4">
+            <h1 class="text-xl font-bold">
+                <span class="text-indigo-400">Movie</span>World
+            </h1>
+            <nav class="space-x-4 text-sm">
+                <a href="index.html" class="text-indigo-400">Home</a>
+                <a href="movies.html" class="text-slate-300 hover:text-indigo-300">Movies</a>
+            </nav>
+        </div>
+    </header>
 
-  <h1 class="font-mono font-extrabold text-7xl text-red-700 animate-pulse mb-6">ERROR 404</h1>
-
-  <p class="font-mono text-white text-lg mb-2">Looks like you took the wrong path...</p>
-  <p class="font-mono text-white text-lg mb-2">📍 LOCATION: THE VOID</p>
-  <p class="font-mono text-white text-lg mb-8">Downloading RAM... please wait</p>
-
-  <div class="w-2/3 bg-gray-800 rounded-md h-3 overflow-hidden mb-10">
-    <div id="progressBar" class="bg-green-600 h-3 w-0 transition-all duration-300"></div>
-  </div>
-
-  <button id="returnBtn" class="border-2 border-green-600 text-green-400 px-6 py-2 rounded-md hover:bg-green-600 hover:text-white transition">
-    Press to Return Back to Your Life
-  </button>
-
-  <script>
-    const bar = document.getElementById('progressBar');
-    const btn = document.getElementById('returnBtn');
-    let progress = 0;
-    let downloading = true;
-
-
-    const timer = setInterval(() => {
-      progress += 10;
-      bar.style.width = progress + "%";
-      if (progress >= 100) {
-        clearInterval(timer);
-        downloading = false;
-      }
-    }, 500);
-
-
-    btn.addEventListener('click', () => {
-      if (downloading) {
-        alert("Hold on... system not ready yet!");
-      } else {
-        alert("System rebooting...");
-        setTimeout(() => {
-          window.location.href = "Web2.html";
-        }, 1200);
-      }
-    });
-  </script>
-
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <section class="space-y-4">
+            <h2 class="text-3xl font-bold">Welcome to MovieWorld</h2>
+            <p class="text-slate-300">
+                A simple movie site built with HTML, Tailwind CSS, and a bit of JavaScript.
+            </p>
+            <a href="movies.html"
+               class="inline-flex items-center rounded-lg bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400">
+                Go to Movies
+            </a>
+        </section>
+    </main>
 </body>
 </html>
-
-
-
-
-
-
-
